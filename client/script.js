@@ -85,9 +85,7 @@ const handleSubmit = async (e) => {
 
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
-
-    //fetch data from server -> bot's response
-    const response = await fetch('https://al-zamili.onrender.com', {
+    const response = await fetch('http://localhost:5000', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -111,7 +109,8 @@ const handleSubmit = async (e) => {
         messageDiv.innerHTML = "Something went wrong"
         alert(err)
     }
-}
+
+    }
 
 form.addEventListener('submit', handleSubmit)
 form.addEventListener('keyup', (e) => {
